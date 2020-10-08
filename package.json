@@ -1,0 +1,26 @@
+{
+  "name": "project-s",
+  "version": "1.0.0",
+  "description": "Project for \"Desarollo en Sistemas\" subject.\r College: Instituto Industrial Luis A. Huergo, 6th Year.\r Devs/students: Heras Sebastian / Pacio Francisco",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/her4z/Project-S.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/her4z/Project-S/issues"
+  },
+  "homepage": "https://github.com/her4z/Project-S#readme",
+  "dependencies": {
+    "electron": "^10.1.3",
+    "electron-google-oauth": "^2.0.0",
+    "electron-reload": "^1.5.0",
+    "googleapis": "^39.2.0",
+    "gradle": "^1.2.3"
+  }
+}

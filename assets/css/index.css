@@ -1,0 +1,40 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap');
+body{
+    background-color: #1a1919;
+}
+h1{
+    font-family: 'Roboto', sans-serif;
+    color: white;
+    margin-top: 8%;
+    font-size: 70px;
+}
+footer{
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}
+#imgGoogleLogo{
+    height: 3em;
+    padding-right: 0.5em;
+}
+#imgSanzwichLogo{
+    height: 6em;
+    padding-left: 92%;
+    margin-bottom: 2%;
+}
+.container{
+    text-align: center;
+    
+    
+}
+.ctnLogin{
+    margin-top: 10%;
+    align-content: inherit;
+}
+#btnGoogleLogin{
+    height: 4em;
+    width: 14em;
+    font-family: 'Roboto', sans-serif;
+    color: white;
+    font-size: 22px;
+}
