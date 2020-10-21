@@ -15,7 +15,7 @@ const browserWindowParamsGAuth = {
 const clientId = '570791553504-hmbek76cshr13vnrf7qorr13ppv95271.apps.googleusercontent.com';
 const clientSecret = 'AAyX6AeMA17yg1_ucb2k_iT2';
 
-ipcMain.handle('google-login', async (event)=>{
+ipcMain.on('google-login', (event)=>{
   const googleOauth = electronGoogleOauth(browserWindowParamsGAuth);
   googleOauth.getAccessToken(
     [
@@ -29,20 +29,19 @@ ipcMain.handle('google-login', async (event)=>{
       if(err) throw err;
       console.log('Saved file');
     }) 
-    const res =  InitialRequest(result);
-    return res;
+    InitialRequest(result, event);
+
     
   });
 })
 
-async function InitialRequest(client){
+async function InitialRequest(client, event){
   let req = await net.request(`https://classroom.googleapis.com/v1/courses?access_token=${client.access_token}`);
   req.on('response', (response) =>{
     response.on('data', (buffer)=>{
       let buf2json = JSON.parse(buffer.toString('utf8'));
       const courses = buf2json.courses;
-      console.log(courses);
-      return(courses);
+      event.reply('google-login-reply', courses);
     })
   })
   req.end()
@@ -56,8 +55,6 @@ async function InitialRequest(client){
 
   
 }
-
-
 
 
 function createWindow () {
