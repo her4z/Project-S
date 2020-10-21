@@ -72,7 +72,6 @@ function createWindow () {
   const menu = Menu.buildFromTemplate([])
   Menu.setApplicationMenu(menu);
   win.maximize();
-  win.webContents.openDevTools();
   // and load the index.html of the app.
   win.loadFile(path.join(__dirname, '/src/index.html'));
 }
